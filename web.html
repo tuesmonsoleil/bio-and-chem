@@ -1,11 +1,45 @@
-<!DOCTYPE html>  #表示格式是html5
-<html>
-    <head>
-        <title>Annie's practice</title>
-    </head>
-    <body>
-        <h1>標題</h1>
-        <p>段落段落</p>
-        <p>段落段落</p>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="your-image-url-here" alt="Your Image">
+    </div>
+    <div class="button-container">
+        <button onclick="connectToBackend(1)">Button 1</button>
+        <button onclick="connectToBackend(2)">Button 2</button>
+        <button onclick="connectToBackend(3)">Button 3</button>
+        <button onclick="connectToBackend(4)">Button 4</button>
+        <button onclick="connectToBackend(5)">Button 5</button>
+        <button onclick="connectToBackend(6)">Button 6</button>
+    </div>
+
+    <script>
+        function connectToBackend(buttonNumber) {
+            // 在這裡添加您的後端連接邏輯
+            console.log(`Button ${buttonNumber} clicked`);
+            // 例如，您可以使用 AJAX 或 Fetch API 發送請求到後端
+        }
+    </script>
+</body>
 </html>
