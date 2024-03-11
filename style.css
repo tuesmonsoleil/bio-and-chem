@@ -1,57 +1,166 @@
-button {
-  background-color: transparent;
-  height: 100px;
-  width: 70px;
-  border: 1px solid #D88D60;
-  border-radius: 10px;
-  margin-top: 129px;
-  margin-bottom: 78px;
-  margin-left: 33px;
-  margin-right: 33px;
-  box-sizing: border-box;
-  color: #D88D60;
-  font-family: "Avenir Next LT W01 Bold",sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 24px;
-  padding: 129px 87px;
-  position: relative;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+/* 在 styles.css 中 */
+:root {
+    --clr: #FFBE98; /* 這裡的顏色可以根據你的需求進行修改 */
 }
 
-button:hover,
-button:active {
-  outline: 0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
 }
 
-button:hover {
-  background-color: transparent;
-  cursor: pointer;
+body {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e6e7e5;
 }
 
-button:before {
-  background-color: #FFEADE;
-  border-radius: 10px;
-  content: "";
-  height: calc(100% + 3px);
-  position: absolute;
-  right: -7px;
-  top: -9px;
-  transition: background-color 300ms ease-in;
-  width: 100%;
-  z-index: -1;
+.container {
+    width: 600px; 
+    height: 400px; 
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 30px;
 }
 
-button:hover:before {
-  background-color: #FFBE98;
-  border-radius: 10px;
+.container .drop {
+    width: 350px;
+    height: 350px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: inset 20px 20px 20px rgba(0,0,0,0.05),
+                25px 35px 20px rgba(0,0,0,0.05),
+                25px 20px 20px rgba(0,0,0,0.05),
+                inset 25px 30px 30px rgba(255,255,255,0.9);
+    animation: slide 3s linear;
 }
 
-@media (min-width: 768px) {
-  button {
-    padding: 16px 32px;
-  }
+@keyframes slide {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.container .drop:nth-child(1) {
+    border-radius: 10%;
+    margin: 20px 30px 30px 0;
+}
+<div class="drop">
+<div class="content">
+    <h2>01</h2>
+    <p>說明文字</p>
+    <a href="#">Read More</a>
+</div>
+</div>
+<div class="drop">
+<div class="content">
+    <h2>02</h2>
+    <p>文字說明</p>
+    <a href="#">Read More</a>
+</div>
+<div class="drop">
+<div class="content">
+    <h2>02</h2>
+    <p>文字說明</p>
+    <a href="#">Read More</a>
+</div>
+</div>
+
+.container .drop::before {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-color: #ffffffc8;
+    top: 50px;
+    left: 80px;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.container .drop::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #ffffffc8;
+    top: 90px;
+    left: 110px;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.container .drop .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 40px 60px;
+    gap: 15px;
+}
+
+.container .drop .content h2 {
+    margin-bottom: 15px;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: var(--clr);
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.1),
+                inset -2px -5px 10px rgba(255,255,255,1),
+                15px 15px 10px rgba(0,0,0,0.05),
+                15px 10px 15px rgba(0,0,0,0.25);
+}
+
+.container .drop .content a {
+    position: relative;
+    padding: 10px 20px;
+    background-color: var(--clr);
+    border-radius: 20px;
+    color: #fff;
+    text-shadow: 2px 5px 5px rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: background-color 0.5s, color 0.5s;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.1),
+                inset -2px -5px 10px rgba(255,255,255,0.1),
+                10px 10px 5px rgba(0,0,0,0.05),
+                10px 10px 5px rgba(0,0,0,0.25);
+}
+
+.container .drop .content a:hover {
+    background-color: #fff;
+    color: var(--clr);
+}
+
+/* -----Media Query----- */
+
+@media only screen and (max-width:800px) {
+    .container .drop {
+        width: 275px;
+        height: 275px;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .container {
+        flex-direction: column;
+    }
 }
