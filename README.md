@@ -12,3 +12,4 @@
 然後做聯邦式學習
 
 生化點進去之後可以選擇要側或學哪個循環
+https://www.notion.so/c-9243/Web-41bb815097ce42d297cb38a9e8cefb13
