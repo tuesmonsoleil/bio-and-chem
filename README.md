@@ -17,3 +17,8 @@ https://www.notion.so/c-9243/Web-41bb815097ce42d297cb38a9e8cefb13
 index.html
 style.css
 link.css
+
+next step to do :
+chamge the size and shape of drops
+reposition 3 drops
+add new interaction animated of buttons ( combine 2 steps when someone hovers or clicks )
