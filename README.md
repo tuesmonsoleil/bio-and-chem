@@ -1,15 +1,18 @@
-首頁參考hotel website 那張
-圖片上跌一個到github 的link 底下放四個格子做主要功能
-色系用大地和peach fuzz
+首頁左方放 github link
+色系用大地和 peach fuzz
 左上角要有網頁名稱
 主頁圖片模糊化並寫一些介紹
+圖片可以用api連接天氣狀態每天變換
+右方放四個格子做 main feature
 
 主要功能 : 
 圍棋
 生化
 猜數字
+聯邦訓練分析結果
 
-然後做聯邦式學習
+TO DO -->
+做聯邦式學習
 
 生化點進去之後可以選擇要側或學哪個循環
 https://www.notion.so/c-9243/Web-41bb815097ce42d297cb38a9e8cefb13
@@ -20,6 +23,8 @@ link.css
 style.js
 
 next step to do :
-chamge the size and shape of drops
-reposition 3 drops
+chamge the interval of drops
 add new interaction animated of buttons ( combine 2 steps when someone hovers or clicks )
+creat github link and reposition button on the left area
+add today's weather, make it change automaticaly everyday
+add 2 or three function and web discrition the left image
