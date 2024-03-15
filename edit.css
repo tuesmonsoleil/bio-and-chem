@@ -1,0 +1,379 @@
+/* style.css */
+.main-container {
+    display: flex;
+    width: 100%;
+}
+
+.left-panel {
+    flex: 1; /* 占比1 */
+    background-color: lightblue; /* 左側面板背景顏色 */
+    padding: 20px;
+}
+
+.right-panel {
+    flex: 1.618; /* 占比1.618，黃金比例 */
+    background-color: lightcoral; /* 右側面板背景顏色 */
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.drop {
+    flex: 1 0 50%; /* 上下平分 */
+    padding: 10px;
+}
+
+/* code for main functions links */
+:root {
+    --clr: #FFBE98; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e6e7e5;
+}
+
+.container {
+    width: 600px; 
+    height: 400px; 
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 30px;
+}
+
+.container .drop {
+    width: 350px;
+    height: 350px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: inset 20px 20px 20px rgba(0,0,0,0.05),
+                25px 35px 20px rgba(0,0,0,0.05),
+                25px 20px 20px rgba(0,0,0,0.05),
+                inset 25px 30px 30px rgba(255,255,255,0.9);
+    animation: slide 3s linear;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.container .drop {
+    border-radius: 10%;
+    margin: 20px 30px 30px 0;
+}
+
+.container .drop:nth-child(2) {
+    border-radius: 10%;
+    margin: 20px 30px 30px 0;
+}
+
+.container .drop::before {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-color: #ffffffc8;
+    top: 50px;
+    left: 80px;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.container .drop::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #ffffffc8;
+    top: 90px;
+    left: 110px;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.container .drop .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 40px 60px;
+    gap: 15px;
+}
+
+.container .drop .content h2 {
+    margin-bottom: 15px;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: var(--clr);
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.1),
+                inset -2px -5px 10px rgba(255,255,255,1),
+                15px 15px 10px rgba(0,0,0,0.05),
+                15px 10px 15px rgba(0,0,0,0.25);
+}
+
+.buttons, .buttons:before, .buttons:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.buttons {
+    margin-top: 50px;
+    text-align: center;
+    border-radius:30px;
+}
+
+.buttons button.blob-btn {
+    z-index: 1;
+    position: relative;
+    padding: 20px 46px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--clr);
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: color 0.5s;
+    cursor: pointer;
+    border-radius:30px;
+}
+
+.buttons button.blob-btn:before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--clr);
+    border-radius:30px;
+}
+
+.buttons button.blob-btn:after {
+    content: "";
+    z-index: -2;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    transition: all 0.3s 0.2s;
+    border-radius:30px;
+}
+
+.buttons button.blob-btn:hover {
+    color: #fffdfd;
+    border-radius:30px;
+}
+
+.buttons button.blob-btn:hover:after {
+    transition: all 0.3s;
+    left: 0;
+    top: 0;
+    border-radius:30px;
+}
+
+.buttons .blob-btn__inner {
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius:30px;
+    background: #FFFFFF;
+}
+
+.buttons .blob-btn__blobs {
+    position: relative;
+    display: block;
+    height: 100%;
+    filter: url('#goo');
+}
+/*FIXME:hover 色塊非填滿整個按鈕*/
+.buttons .blob-btn__blob {
+    position: absolute;
+    top: 2px;
+    width: 100%;
+    height: 100%;
+    background: #FFBE98;
+    border-radius: 100%;
+    transform: translate3d(0, 150%, 0) scale(1.7);
+    transition: transform 0.45s;
+
+    @supports (filter: url('#goo')) {
+        transform: translate3d(0, 150%, 0) scale(1.4);
+    }
+}
+
+.buttons .blob-btn:hover .blob-btn__blob {
+    transform: translateZ(0) scale(1.7);
+
+    @supports (filter: url('#goo')) {
+        transform: translateZ(0) scale(1.4);
+    }
+}
+
+@media only screen and (max-width:800px) {
+    .container .drop {
+        width: 275px;
+        height: 275px;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+/* code for github link */
+
+body{
+font-size: 16px;
+font-family: 'Helvetica', 'Arial', sans-serif;
+text-align: center;
+background-color: #f8faff;
+}
+
+.bubbly-button{
+font-family: 'Helvetica', 'Arial', sans-serif;
+display: inline-block;
+font-size: 1em;
+padding: 1em 2em;
+margin-top: 100px;
+margin-bottom: 60px;
+-webkit-appearance: none;
+appearance: none;
+background-color: #FFBE98;
+color: #fff;
+border-radius: 4px;
+border: none;
+cursor: pointer;
+position: relative;
+transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+box-shadow: 0 2px 25px hsla(50, 100%, 99%, 0.502);
+
+&:focus {
+    outline: 0;
+}
+
+&:before, &:after{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 140%;
+    height: 100%;
+    left: -20%;
+    z-index: -1000;
+    transition: all ease-in-out 0.5s;
+    background-repeat: no-repeat;
+}
+
+&:before{
+    display: none;
+    top: -75%;
+    background-image:  
+    radial-gradient(circle, #FFBE98 20%, transparent 20%),
+    radial-gradient(circle,  transparent 20%, #FFBE98 20%, transparent 30%),
+    radial-gradient(circle, #FFBE98 20%, transparent 20%), 
+    radial-gradient(circle, #FFBE98 20%, transparent 20%),
+    radial-gradient(circle,  transparent 10%, #FFBE98 15%, transparent 20%),
+    radial-gradient(circle, #FFBE98 20%, transparent 20%),
+    radial-gradient(circle, #FFBE98 20%, transparent 20%),
+    radial-gradient(circle, #FFBE98 20%, transparent 20%),
+    radial-gradient(circle, #FFBE98 20%, transparent 20%);
+background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+background-position: 0% 80%, -5% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 85% 30%;
+}
+
+&:after{
+    display: none;
+    bottom: -75%;
+    background-image:  
+    radial-gradient(circle, #FFBE98 20%, transparent 20%), 
+    radial-gradient(circle, #FFBE98 20%, transparent 20%),
+    radial-gradient(circle,  transparent 10%, #FFBE98 15%, transparent 20%),
+    radial-gradient(circle, #FFBE98 20%, transparent 20%),
+    radial-gradient(circle, #FFBE98 20%, transparent 20%),
+    radial-gradient(circle, #FFBE98 20%, transparent 20%),
+    radial-gradient(circle, #FFBE98 20%, transparent 20%);
+background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+}
+
+&:active{
+    transform: scale(0.9);
+    background-color: darken(#FFBE98, 5%);
+    box-shadow: 0 2px 25px hwb(40 92% 4% / 0.2);
+}
+
+&.animate{
+    &:before{
+    display: block;
+    animation: topBubbles ease-in-out 0.75s forwards;
+    }
+    &:after{
+    display: block;
+    animation: bottomBubbles ease-in-out 0.75s forwards;
+        }
+    }
+}
+
+@keyframes topBubbles {
+0%{
+background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+}
+50% {
+background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;}
+100% {
+background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+    }
+}
+
+@keyframes bottomBubbles {
+0%{
+background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+}
+50% {
+background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;}
+100% {
+background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+    }
+}
